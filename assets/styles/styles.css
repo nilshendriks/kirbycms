@@ -6,8 +6,8 @@ html {
   height: 101%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust:none;
-  -ms-text-size-adjust:none;
+  /*-webkit-text-size-adjust:none;
+  -ms-text-size-adjust:none;*/
 }
 body {
   font-family: Helvetica, Arial, sans-serif;
@@ -28,7 +28,7 @@ a,
 a:hover,
 a:active,
 a:visited {
-  outline: 0px;
+  outline: 0;
 }
 a:hover {
   color: red;
@@ -112,6 +112,15 @@ footer a:hover {
 }
 
 /* media queries */
+
+/*only iPhone*/
+ @media only screen and (max-device-width: 960px) {
+
+    /*fixes too big font in mobile Safari*/
+    html {
+        -webkit-text-size-adjust:none;
+    }
+ }
 /* breakpoint 768 */
 @media screen and (min-width:768px) {
   body {
