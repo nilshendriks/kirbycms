@@ -6,6 +6,8 @@ html {
   height: 101%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust:none;
+  -ms-text-size-adjust:none;
 }
 body {
   font-family: Helvetica, Arial, sans-serif;
@@ -13,8 +15,10 @@ body {
   line-height: 26px;
   background: #fff;
   color: #777;
-  width: 450px;
-  margin: 50px auto;
+  margin: 50px 1em;
+  /*move to mq*/
+  /*width: 450px;*/
+  /*margin: 50px auto;*/
 }
 a {
   color: #222;
@@ -39,6 +43,13 @@ h1 {
   color: #222;
   margin-bottom: 20px;
 }
+header h1 {
+  font-weight:normal;
+}
+header h1 img {
+  margin-right: 15px;
+  vertical-align: top;
+}
 h2 {
   font-size: 28px;
   font-weight: normal;
@@ -61,21 +72,24 @@ p {
 nav {
   overflow: hidden;
   border-top: 1px solid red;
-  border-bottom: 1px solid red;
+  /*border-bottom: 1px solid red;*/
   padding: 10px 0;
 }
 nav li {
   list-style: none;
-  margin-right: 20px;
+  /*margin-right: 20px;*/
   font-weight: bold;
-  float: left;
+  /*float: left;*/
 }
-nav li a.active {
+nav li .active {
   color: red;
 }
+nav li a {
+  display: block;
+}
 nav.submenu {
-  border-top: none;
-  margin-bottom: 20px;
+  /*border-top: none;*/
+  /*margin-bottom: 20px;*/
 }
 nav.submenu a {
   font-weight: normal;
@@ -85,7 +99,7 @@ section.content {
 }
 footer {
   padding-top: 20px;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
   border-top: 1px solid red;
   font-size: 13px;
   color: #222;
@@ -95,4 +109,41 @@ footer a {
 }
 footer a:hover {
   color: #222;
+}
+
+/* media queries */
+/* breakpoint 768 */
+@media screen and (min-width:768px) {
+  body {
+    width: 450px;
+    margin: 50px auto;
+  }
+  .menu {
+    position: absolute;
+    top:121px;
+    width:450px;
+  }
+  nav {
+    border-bottom: 1px solid red;
+  }
+  nav li {
+    margin-right: 20px;
+    float: left;
+  }
+  nav.submenu {
+  border-top: none;
+  margin-bottom: 20px;
+  position: absolute;
+  top:169px;
+  width:450px;
+  }
+  section.content {
+    margin-top: 120px;
+  }
+  section.subpage {
+    margin-top: 170px;
+  }
+  footer {
+    margin-top: 20px;
+  }
 }
